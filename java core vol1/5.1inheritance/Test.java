@@ -1,5 +1,7 @@
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 //一个类可以使用所属包中的所有类，以及其他包中的public类
 //不指定包则在default packge
@@ -7,6 +9,7 @@ import java.util.Arrays;
 //final类和方法 阻止继承
 public class Test
 {
+    enum Size { SMALL, MEDIUM };
     public static void main(String args[]) {
         Manager boss = new Manager("zhang",8000);
         boss.setBonus(2000);
@@ -65,6 +68,44 @@ public class Test
         int[] nums = {1,2,3};
         System.out.println(nums);
         System.out.println(Arrays.toString(nums));
+
+        ArrayList<Integer> list = new ArrayList<>(100);
+        //ArrayList<int> listErr = new ArrayList<>(100); 不能为原始类型primitive
+        int loop = 100;
+        while(loop > 0) {
+            list.add(loop);
+            loop--;
+        }
+        Integer[] list2 = new Integer[list.size()];
+
+        list.toArray(list2);
+        System.out.println(Arrays.toString(list2));
+
+        Integer a = 1000; //100
+        Integer b = 1000;
+        if(a==b) System.out.println("yes");
+        if(a.equals(b)) System.out.println("yes2");
+        //100的时候 -127～128包装在固定对象 所以两个都相等
+        //其他数值 只有第二个比较相等
+
+        String s2 = "101";
+        System.out.println(Integer.parseInt(s2));
+        String s3 = "001";
+        System.out.println(Integer.parseInt(s3,2));
+
+        //5.6枚举类
+
+        //Size是个类 有两个实例——要用==来比较
+        Size[] sizes = Size.values();
+        System.out.println(Arrays.toString(sizes));// [SMALL, MEDIUM]
+
+        Scanner in = new Scanner(System.in);
+        String input = in.next().toUpperCase();
+        Size zySize = Enum.valueOf(Size.class, input); //toString的逆向valueof
+        System.out.println(zySize);
+
+
+
     }
 
 }
