@@ -1,6 +1,8 @@
 import com.sun.tools.internal.ws.processor.model.ExtendedModelVisitor;
 import javafx.beans.binding.ObjectExpression;
 
+import java.util.Objects;
+
 public class Employee
 {
     private String name;
@@ -23,7 +25,7 @@ public class Employee
     private void getPrivate(){
         return;
     }
-    public boolean equals(Object other) {
+    @Override public boolean equals(Object other) {
         if(this == other) return true;
         if(other == null) return false;
         if(getClass() != other.getClass()) { //返回对象所属的类
@@ -35,10 +37,14 @@ public class Employee
         return name.equals(em.name)
                 && salary == em.salary;
         //为了防止name为Null
-        return Object(name, em.name);
+        //return Objects.equals(name, em.name);
         //如果两个参数都不为null 则调用 a.equals(b)
 
-        if(!(other instanceof Employee)) return false;
+        //if(!(other instanceof Employee)) return false;
         //如果调用employee.equals(manager)
     }
+    /*@Override public boolean equals(Employee other){
+        //错误: 方法不会覆盖或实现超类型的方法
+    }*/
+
 }

@@ -1,3 +1,5 @@
+import java.awt.*;
+import java.util.Arrays;
 
 //一个类可以使用所属包中的所有类，以及其他包中的public类
 //不指定包则在default packge
@@ -44,6 +46,25 @@ public class Test
             System.out.println(tmp);
         } error*/
 
+        //hashCode
+
+        String s = "ok";
+        StringBuilder sb = new StringBuilder(s);
+        System.out.println(s.hashCode() + " " + sb.hashCode());
+        String t = new String("ok");
+        StringBuilder tb = new StringBuilder(t);
+        System.out.println(t.hashCode() + " " + tb.hashCode());
+        //输出： 3548 1846274136
+        //3548 1639705018
+        //如果重新定义equals方法 必须重新定义hashCode方法
+
+        Point p = new Point(10,20);
+        String printMessage = "point is " + p;//自动调用p.toString
+        System.out.println(printMessage);
+        System.out.println(System.out);
+        int[] nums = {1,2,3};
+        System.out.println(nums);
+        System.out.println(Arrays.toString(nums));
     }
 
 }
