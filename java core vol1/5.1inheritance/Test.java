@@ -37,6 +37,13 @@ public class Test
         for(Person p: people) {
             System.out.println(p.getName() + "," + p.getDescription());
         }
+        Object obj;
+        obj = new int[10];
+        /*for(Object tmp: obj) {
+            tmp = 1;
+            System.out.println(tmp);
+        } error*/
+
     }
 
 }
