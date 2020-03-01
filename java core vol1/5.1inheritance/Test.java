@@ -1,3 +1,4 @@
+
 //一个类可以使用所属包中的所有类，以及其他包中的public类
 //不指定包则在default packge
 //javac总在当前目录查找文件 虚拟机只有类路径包括.目录的时候才会查看当前目录
@@ -21,13 +22,21 @@ public class Test
             System.out.println("name="+e.getName()+",salary=" + e.getSalary());
         }
 
-        Manager boss2 = (Manager)staff[1];
+        //Manager boss2 = (Manager)staff[1];
         //运行时错误java.lang.ClassCastException: Employee cannot be cast to Manager 向下类型转换
         if(staff[1] instanceof Manager)
         {
-            boss2 = (Manager)staff[1];
+            //boss2 = (Manager)staff[1];
         }
-        
+
+        Person[] people = new Person[2];
+
+        people[0] = new Student("zhang","zhi");
+        people[1] = new Student("yuan","zhang");
+
+        for(Person p: people) {
+            System.out.println(p.getName() + "," + p.getDescription());
+        }
     }
 
 }
