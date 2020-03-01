@@ -3,7 +3,7 @@ import javafx.beans.binding.ObjectExpression;
 
 import java.util.Objects;
 
-public class Employee
+public class Employee implements Comparable<Employee>
 {
     private String name;
     private double salary;
@@ -47,4 +47,8 @@ public class Employee
         //错误: 方法不会覆盖或实现超类型的方法
     }*/
 
+    public int compareTo(Employee other)
+    {
+        return Double.compare(salary, other.salary);
+    }
 }

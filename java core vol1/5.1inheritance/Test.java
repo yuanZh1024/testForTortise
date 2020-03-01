@@ -21,6 +21,7 @@ public class Test
         staff[2] = new Employee("yuan",5000);
         //staff[0].setbonus(100);//报错 staff[0]声明的是Employee类型
         Manager[] mans = new Manager[10];
+        Arrays.sort(staff);
         //mans[0] = new Employee("zz", 123);//错误: 不兼容的类型: Employee无法转换为Manager
         // e : 一个对象变量能够指示多种实际类型不同的对象（Employee/manager)——多态/动态绑定
         for(Employee e: staff) {
@@ -104,8 +105,20 @@ public class Test
         Size zySize = Enum.valueOf(Size.class, input); //toString的逆向valueof
         System.out.println(zySize);
 
-
+        Comparable wtf = new Employee("zhang",1);
+        if(boss instanceof Comparable) System.out.println("yes");
 
     }
+
+    //第6章 接口的所有方法自动属于public，可以定义常量，简单方法（se8）
+    //接口：类的需求描述
+    /*public interface Comparable
+    {
+        int compareTo(Object other);
+    }*/
+    //接口中的域自动被视为public static final
+    //java不支持多继承
+    //public class student extends Person,Comparable——error
+    //克隆 内部类 lambda暂放
 
 }
