@@ -121,4 +121,5 @@ public class Test
     //public class student extends Person,Comparable——error
     //克隆 内部类 lambda暂放
 
+    //7章 异常派生于Error类或RuntimeException类的异常称为unchecked 其他异常称为checked异常
 }
