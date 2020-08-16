@@ -1,3 +1,4 @@
+package com.yuanzh.TCPServer;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -42,10 +43,9 @@ public class TCPServer {
                 使用多线程技术,提高程序的效率
                 有一个客户端上传文件,就开启一个线程,完成文件的上传
              */
-            new Thread(new Runnable() {
+            new Thread(()->
                 //完成文件的上传
-                @Override
-                public void run() {
+               {
                     try {
                         //3.使用Socket对象中的方法getInputStream,获取到网络字节输入流InputStream对象
                         InputStream is = socket.getInputStream();
@@ -84,7 +84,7 @@ public class TCPServer {
                     }catch (IOException e){
                         System.out.println(e);
                     }
-                }
+
             }).start();
 
 
