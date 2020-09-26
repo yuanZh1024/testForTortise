@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/lyons/dao/GoodsDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lyons/dao/GsalesDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/lyons/db/DbClose.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/lyons/entity/Goods.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/lyons/tools/ScannerChoice.java" charset="GBK" />
+  </component>
+</project>

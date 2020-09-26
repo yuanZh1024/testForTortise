@@ -1,4 +1,4 @@
-package com.yuanzh;
+package com.yuanzh.domain;
 
 import java.io.Serializable;
 
